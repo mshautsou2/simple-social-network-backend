@@ -1,9 +1,11 @@
+import { Controller } from '@src/__framework/api/decorators/controller.decorator';
+import { Get } from '@src/__framework/api/decorators/routes.decorator';
 import { AppController, RouteHandler } from '../../__framework/api/app-builder';
-import { Route } from '../../__framework/api/decorators/route.decorator';
-
+@Controller({ basePath: 'users'})
 class UserController implements AppController {
-  @Route({ method: 'GET', path: '/' })
-  getUsers: RouteHandler = () => {
+  @Get({ path: '/' })
+  getUsers: RouteHandler = (ctx) => {
+    console.log(ctx)
     return {
       status: 200,
       body: 'ok'

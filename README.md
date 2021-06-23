@@ -13,4 +13,28 @@ Add this code snippet to your vscode settings.json
 
 ## Install Koa
 
+## How to configure absolute pathes
 
+1. Update tsconfig.json
+tsconfig.json
+```
+      "baseUrl": "./",
+      "paths": {
+        "@src/*": [
+          "./src/*"
+        ],
+      }
+```
+2. Add tsconfig-paths dependency
+```
+yarn add -D tsconfig-paths
+```
+
+3. Update nodemon script
+
+package.json
+```
+nodemon -e ts,js --exec ts-node -r tsconfig-paths/register src/index.ts
+```
+# Issues
+1. eslint doesn't work

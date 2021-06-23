@@ -1,12 +1,19 @@
 {
-  "compilerOptions": {
-    "target": "ES5",
-    "experimentalDecorators": true,
-    "baseUrl": "./",
-    "paths": {
-      "src/*": [
-        "./src/*"
-      ],
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "declaration": true,
+      "sourceMap": true,
+      "outDir": "dist",
+      "rootDir": "./",
+      "strict": true,
+      "esModuleInterop": true,
+      "experimentalDecorators": true,
+      "baseUrl": "./",
+      "paths": {
+        "@src/*": [
+          "./src/*"
+        ],
+      }
     }
   }
-}

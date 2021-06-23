@@ -7,7 +7,11 @@ export interface App {
 export interface AppController {
 }
 
-export type RouteHandler = (ctx) => { status?: number, body?: any }
+export type RequestContext = {
+  body?: any
+  headers?: any
+}
+export type RouteHandler = (ctx: RequestContext) => { status?: number, body?: any }
 
 export const createApp = (providerName: 'koa' | 'express' | 'fastify' | 'hapi'): App => {
   if (providerName !== 'koa') {
